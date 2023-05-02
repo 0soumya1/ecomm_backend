@@ -122,4 +122,7 @@ function verifyToken(req, resp, next){
   //console.log("middleware called", token)
 }
 
+app.get("/", (req, resp)=>{
+  resp.send("hello world")
+})
 app.listen(5000);
