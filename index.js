@@ -27,7 +27,7 @@ app.post("/register", async (req, resp) => {
     resp.send({ result, auth: token });
   });
 });
-// abgh
+
 app.post("/login", async (req, resp) => {
   // route for login api
   console.log(req.body);
@@ -125,4 +125,5 @@ function verifyToken(req, resp, next){
 app.get("/", (req, resp)=>{
   resp.send("hello world")
 })
+
 app.listen(5000);
