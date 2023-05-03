@@ -1,13 +1,13 @@
 const express = require("express");
 require("./db/config"); //config file
+const app = express();
+const cors = require("cors");
+
 const user = require("./db/user"); // model
 const Product = require("./db/Product");
 
 const Jwt = require("jsonwebtoken"); //jwt authentication
 const jwtKey = "e-comm";
-
-const cors = require("cors");
-const app = express();
 
 app.use(express.json()); // postman  as a middleware
 app.use(cors()); //middleware
