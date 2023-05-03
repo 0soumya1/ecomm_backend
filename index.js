@@ -14,7 +14,7 @@ app.use(cors()); //middleware
 
 app.post("/register", async (req, resp) => {
   //route for register api
-  let User = new user(req.body);
+  let User = user(req.body);
   let result = await User.save();
   result = result.toObject();
   delete result.password;
@@ -52,7 +52,7 @@ app.post("/login", async (req, resp) => {
 
 app.post("/add-product", verifyToken, async (req, resp) => {
   // route for add-product api
-  let product = new Product(req.body);
+  let product = Product(req.body);
   let result = await product.save();
   resp.send(result);
 });
